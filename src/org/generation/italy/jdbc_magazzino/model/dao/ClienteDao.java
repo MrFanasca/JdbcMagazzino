@@ -74,7 +74,7 @@ public class ClienteDao extends ADao{
 	
 	public Cliente loadClienteByNominativo (String nominativoRicercato) throws SQLException {
 		
-			String selectFromClienteByCodiceFiscale =							//imposta il testo del comando SQL da eseguire
+			String selectFromClienteByNominativo =							//imposta il testo del comando SQL da eseguire
 					" SELECT codice_fiscale, nominativo "
 				  + "   FROM cliente                    "
 				  + "  WHERE cliente.nominativo = ? ";
@@ -82,7 +82,7 @@ public class ClienteDao extends ADao{
 			// String parametroCodiceFiscale = "Persichetti";					//imposta il valore del parametro codice fiscale
     
 			PreparedStatement preparedStatement =								//predispone JDBC per l'invio al database del comando SQL  
-					this.jdbcConnectionToDatabase.prepareStatement(selectFromClienteByCodiceFiscale);
+					this.jdbcConnectionToDatabase.prepareStatement(selectFromClienteByNominativo);
 			
 			preparedStatement.setString(1, nominativoRicercato);				//imposta il valore del parametro di ricerca codice fiscale (parametro String)
     
@@ -114,7 +114,7 @@ public class ClienteDao extends ADao{
 	 * // "   SELECT codice_fiscale, nominativo "
        // + "   FROM cliente                    "
 	   // + "  WHERE cliente.nominativo LIKE ? 	";
-	 * @param nominativoLike nominativo sul codice del prodotto
+	 * @param nominativoLike nominativo del cliente
 	 * @return elenco clienti trovati
 	 * @throws SQLException
 	 */
@@ -174,11 +174,11 @@ public class ClienteDao extends ADao{
 		
 		PreparedStatement preparedStatementInsertCliente = 						//predispone JDBC per l'invio al database del comando SQL
 				this.jdbcConnectionToDatabase.prepareStatement(insertCliente);
-		
+																				//imposta il valore del parametro di inserimento 'codice_fiscale'
 		preparedStatementInsertCliente.setString(1, cliente.getCodiceFiscale());
-		preparedStatementInsertCliente.setString(2, cliente.getNominativo());
+		preparedStatementInsertCliente.setString(2, cliente.getNominativo());	//imposta il valore del parametro di inserimento 'nominativo'
 		
-		preparedStatementInsertCliente.executeUpdate();
+		preparedStatementInsertCliente.executeUpdate();							//esegue la query di INSERT
 		
 	}
 

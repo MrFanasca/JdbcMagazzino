@@ -8,6 +8,9 @@ public class OrdinazioneDao extends ADao{
 		super(jdbcConnectionToDatabase);
 	}
 	
+	// load => SELECT
 	
+	
+	// add => INSERT
 
 }
