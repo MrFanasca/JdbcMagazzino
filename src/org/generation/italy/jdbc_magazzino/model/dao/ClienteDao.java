@@ -24,6 +24,7 @@ public class ClienteDao extends ADao{
        // + "  WHERE cliente.codice_fiscale = ? ";
 	 * @param codiceFiscale codice fiscale del cliente
 	 * @return oggetto di tipo classe Cliente
+	 * @throws SQLException
 	 */
 	
 	public Cliente loadClienteByPrimaryKey (String codiceFiscale) throws SQLException {
@@ -68,6 +69,7 @@ public class ClienteDao extends ADao{
        // + "  WHERE cliente.nominativo = ? ";
 	 * @param nominativo nome e cognome del cliente
 	 * @return oggetto di tipo classe Cliente
+	 * @throws SQLException
 	 */
 	
 	public Cliente loadClienteByNominativo (String nominativoRicercato) throws SQLException {
@@ -114,6 +116,7 @@ public class ClienteDao extends ADao{
 	   // + "  WHERE cliente.nominativo LIKE ? 	";
 	 * @param nominativoLike nominativo sul codice del prodotto
 	 * @return elenco clienti trovati
+	 * @throws SQLException
 	 */
 	
 	public List <Cliente> loadClienteByNominativoLike (String nominativoLike) throws SQLException {
@@ -160,6 +163,7 @@ public class ClienteDao extends ADao{
 	 * //   "INSERT INTO cliente (codice_fiscale, nominativo)"
 	   // + "     VALUES (?, ?)                              ";
 	 * @param cliente oggetto della classe Cliente da inserire
+	 * @throws SQLException
 	 */
 	
 	public void addCliente (Cliente cliente)	throws SQLException {

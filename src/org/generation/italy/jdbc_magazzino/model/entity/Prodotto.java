@@ -13,19 +13,19 @@ public class Prodotto {
     /***********************/
     // DEFINIZIONE ATTRIBUTI
     /***********************/
-    private String codice_prodotto;
+    private String codiceProdotto;
     private String descrizione;
-    private int quantita_disponibile;
+    private int quantitaDisponibile;
     private float prezzo;
 
     /***************/
     // COSTRUTTORI
     /***************/
     
-    public Prodotto(String codice_prodotto, String descrizione, int quantita_disponibile, float prezzo) {
-        this.codice_prodotto = codice_prodotto;
+    public Prodotto(String codiceProdotto, String descrizione, int quantitaDisponibile, float prezzo) {
+        this.codiceProdotto = codiceProdotto;
         this.descrizione = descrizione;
-        this.quantita_disponibile = quantita_disponibile;
+        this.quantitaDisponibile = quantitaDisponibile;
         this.prezzo = prezzo;
     }
 
@@ -34,7 +34,7 @@ public class Prodotto {
     /********************/
     
     public String getCodiceProdotto() {
-        return codice_prodotto;
+        return codiceProdotto;
     }
 
     public String getDescrizione() {
@@ -42,7 +42,7 @@ public class Prodotto {
     }
     
     public int getQuantita_disponibile() {
-		return quantita_disponibile;
+		return quantitaDisponibile;
 	}
 
 	public float getPrezzo() {
@@ -54,7 +54,7 @@ public class Prodotto {
     /***********************************************************************/  
 	@Override
 	public int hashCode() {
-		return Objects.hash(codice_prodotto, descrizione, prezzo, quantita_disponibile);
+		return Objects.hash(codiceProdotto, descrizione, prezzo, quantitaDisponibile);
 	}
 
 	@Override
@@ -66,15 +66,15 @@ public class Prodotto {
 		if (getClass() != obj.getClass())
 			return false;
 		Prodotto other = (Prodotto) obj;
-		return Objects.equals(codice_prodotto, other.codice_prodotto) && Objects.equals(descrizione, other.descrizione)
+		return Objects.equals(codiceProdotto, other.codiceProdotto) && Objects.equals(descrizione, other.descrizione)
 				&& Float.floatToIntBits(prezzo) == Float.floatToIntBits(other.prezzo)
-				&& quantita_disponibile == other.quantita_disponibile;
+				&& quantitaDisponibile == other.quantitaDisponibile;
 	}
 
     @Override
     public String toString() {
-        return "\nProdotto{\n" + "\tcodice_prodotto=" + codice_prodotto + "\n\tdescrizione=" + descrizione + "\n\tquantita_disponibile=" + 
-        					quantita_disponibile + "\n\tprezzo=" + prezzo + '}';
+        return "\nProdotto{\n" + "\tcodice prodotto=" + codiceProdotto + "\n\tdescrizione=" + descrizione + "\n\tquantità disponibile=" + 
+        					quantitaDisponibile + "\n\tprezzo=" + prezzo + '}';
     }
 
 }
