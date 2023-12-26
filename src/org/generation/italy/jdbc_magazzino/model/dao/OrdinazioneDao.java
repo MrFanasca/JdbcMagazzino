@@ -141,7 +141,7 @@ public class OrdinazioneDao extends ADao{
 	
 	// add => INSERT
 	/**
-	 // INSERT INTO ordinazione (codice_fiscale, codice_prodotto, data_ordine, quantit_ordine, prezzo_aquisto)
+	 // INSERT INTO ordinazione (codice_fiscale, codice_prodotto, quantit_ordine, prezzo_aquisto)
 	 //      VALUES (?, ?, ?, ?, ?)
 	 * @param ordinazione oggetto di tipo Ordinazione da inserire
 	 * @throws SQLException
