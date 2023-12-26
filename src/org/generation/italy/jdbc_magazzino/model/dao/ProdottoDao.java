@@ -118,8 +118,10 @@ public class ProdottoDao extends ADao{
 			if (rsSelect.wasNull())	{
 				prezzo = 0f;
 			}
-																				//istanzia un oggetto di tipo classe Cliente inizializzandolo con i valori letti dal record
-			Prodotto prodottoLetto = new Prodotto(codiceProdotto, descrizione, quantitaDisponibile, prezzo);
+																				
+			Prodotto prodottoLetto = 											//istanzia un oggetto di tipo classe Cliente inizializzandolo con i valori letti dal record
+					new Prodotto(codProdotto, descrizione, quantitaDisponibile, prezzo);
+			
 			elencoProdotti.add(prodottoLetto);									//aggiunge all'elenco l'oggetto istanziato
 		}
 			

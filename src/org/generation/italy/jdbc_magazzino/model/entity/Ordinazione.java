@@ -12,22 +12,33 @@ public class Ordinazione {
 	private String codiceFiscale;
 	private String codiceProdotto;
 	private LocalDate dataOrdine;
-	private int quantitOrdine;
-	private int prezzoAquisto;
+	private int quantitaOrdine;
+	private float prezzoAquisto;
 	
 	 /***********************/
     // COSTRUTTORE
     /***********************/
-	public Ordinazione(String codiceFiscale, String codiceProdotto, LocalDate dataOrdine, int quantitOrdine,
-			int prezzoAquisto) {
+	// costruttore usato per il metodo di INSERT
+	public Ordinazione(String codiceFiscale, String codiceProdotto, int quantitaOrdine, float prezzoAquisto) {
+		this.codiceFiscale = codiceFiscale;
+		this.codiceProdotto = codiceProdotto;
+		this.quantitaOrdine = quantitaOrdine;
+		this.dataOrdine = LocalDate.now();
+		this.prezzoAquisto = prezzoAquisto;
+	}
+	
+	
+	// costruttore usato per i metodi di SELECT
+	public Ordinazione(String codiceFiscale, String codiceProdotto, LocalDate dataOrdine, int quantitaOrdine,
+			float prezzoAquisto) {
 		this.codiceFiscale = codiceFiscale;
 		this.codiceProdotto = codiceProdotto;
 		this.dataOrdine = dataOrdine;
-		this.quantitOrdine = quantitOrdine;
+		this.quantitaOrdine = quantitaOrdine;
 		this.prezzoAquisto = prezzoAquisto;
 	}
 
-    /********************/
+	/********************/
     // GETTERS & SETTERS
     /********************/
 	public String getCodiceFiscale() {
@@ -43,10 +54,10 @@ public class Ordinazione {
 	}
 
 	public int getQuantitOrdine() {
-		return quantitOrdine;
+		return quantitaOrdine;
 	}
 
-	public int getPrezzoAquisto() {
+	public float getPrezzoAquisto() {
 		return prezzoAquisto;
 	}
 	
@@ -55,7 +66,7 @@ public class Ordinazione {
     /***********************************************************************/  
 	@Override
 	public int hashCode() {
-		return Objects.hash(codiceFiscale, codiceProdotto, dataOrdine, prezzoAquisto, quantitOrdine);
+		return Objects.hash(codiceFiscale, codiceProdotto, dataOrdine, prezzoAquisto, quantitaOrdine);
 	}
 
 	@Override
@@ -69,13 +80,13 @@ public class Ordinazione {
 		Ordinazione other = (Ordinazione) obj;
 		return Objects.equals(codiceFiscale, other.codiceFiscale)
 				&& Objects.equals(codiceProdotto, other.codiceProdotto) && Objects.equals(dataOrdine, other.dataOrdine)
-				&& prezzoAquisto == other.prezzoAquisto && quantitOrdine == other.quantitOrdine;
+				&& prezzoAquisto == other.prezzoAquisto && quantitaOrdine == other.quantitaOrdine;
 	}    
 	
 	@Override
 	public String toString() {
 		return "Ordinazione [codiceFiscale=" + codiceFiscale + ", codiceProdotto=" + codiceProdotto + ", dataOrdine="
-				+ dataOrdine + ", quantitOrdine=" + quantitOrdine + ", prezzoAquisto=" + prezzoAquisto + "]";
+				+ dataOrdine + ", quantitOrdine=" + quantitaOrdine + ", prezzoAquisto=" + prezzoAquisto + "]";
 	}
 
 	
