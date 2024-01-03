@@ -42,7 +42,7 @@ public class ClienteDao extends ADao{
 			ResultSet rsSelect
 				= preparedStatement.executeQuery();								//esegue la query di SELECT e si predisone a leggere i risutlati presenti in memoria nel DBMS
 
-			Cliente cliente= null;												//istanza dell'entity-bean di tipo classe Cliente
+			Cliente cliente = null;												//istanza dell'entity-bean di tipo classe Cliente
     
 			if (rsSelect.next()) {												//fino a che ci sono risutalti da leggere
 
